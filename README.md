@@ -1,4 +1,6 @@
-glowing-octo-dubstep
-====================
+[![travis ci build state](https://travis-ci.org/mtik00/SAMPLEPROJ.svg?branch=master)](https://travis-ci.org/mtik00/SAMPLEPROJ)
 
-Sample Python project
+Introduction
+============
+
+Sample Python project.  I use this to create new projects.
