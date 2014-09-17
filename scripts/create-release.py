@@ -10,20 +10,26 @@ import shutil
 import argparse
 import subprocess
 
+try:
+    import pypandoc
+except ImportError:
+    pypandoc = None
+    print("ERROR: Can't import pypandoc; lib/README.rst will have wrong format")
+
 
 # Metadata #####################################################################
 __author__ = "Timothy McFadden"
 __date__ = "09/02/2014"
 __copyright__ = "Timothy McFadden, 2014"
 __license__ = "GPLv2"
-__version__ = "0.02"
+__version__ = "0.03"
 
 # Globals ######################################################################
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 LIB_DIR = os.path.realpath(os.path.join(THIS_DIR, '..', 'lib'))
 
 
-def remove_directory(top, remove_top=True):
+def remove_directory(top, remove_top=True, filter=None):
     '''
     Removes all files and directories, bottom-up.
 
@@ -32,8 +38,11 @@ def remove_directory(top, remove_top=True):
     @type remove_top: bool
     @param remove_top: Whether or not to remove the top directory
     '''
+    if filter is None:
+        filter = lambda x: True
+
     for root, dirs, files in os.walk(top, topdown=False):
-        for name in files:
+        for name in [x for x in files if filter(x)]:
             os.remove(os.path.join(root, name))
 
         for name in dirs:
@@ -79,6 +88,19 @@ def make_docs():
             shutil.copyfile(source, dest)
 
 
+def update_readme():
+    markup_file = os.path.realpath(os.path.join(LIB_DIR, '..', 'README.md'))
+    rst_file = os.path.realpath(os.path.join(LIB_DIR, '..', 'lib', 'README.rst'))
+
+    if pypandoc:
+        rst = pypandoc.convert(markup_file, 'rst')
+    else:
+        rst = open(markup_file, 'rb').read()
+
+    with open(rst_file, 'wb') as fh:
+        fh.write(rst)
+
+
 if __name__ == '__main__':
     release_dir = os.path.realpath(os.path.join(LIB_DIR, '..', 'release'))
     parser = argparse.ArgumentParser()
@@ -92,7 +114,10 @@ if __name__ == '__main__':
     with open(os.path.join(LIB_DIR, 'SAMPLEPROJ', '__init__.py'), 'rb') as f:
         exec(f.read())
 
+    remove_directory(release_dir, remove_top=False, filter=lambda x: "keep" not in x)
+
     # Build the docs
+    update_readme()
     make_docs()
 
     try:
