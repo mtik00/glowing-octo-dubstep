@@ -146,5 +146,5 @@ if __name__ == '__main__':
             remove_directory(path)
 
     # clean up the doc build
-    doc_dir = os.path.join(LIB_DIR, 'docs')
-    remove_directory(doc_dir, remove_top=True)
+    for directory in [os.path.join(LIB_DIR, 'docs'), os.path.join(THIS_DIR, '..', 'docs', '_build')]:
+        remove_directory(directory, remove_top=True)
