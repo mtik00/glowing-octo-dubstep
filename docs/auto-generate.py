@@ -82,7 +82,6 @@ if __name__ == '__main__':
                 index_entry = ('src/%s' % module_dir).replace('\\', '/')
                 automodule = module_name
             elif (os.path.split(root)[1] != docdir_root) and ('__init__.py' in files):
-                # module_dir = root[len(args.libdir) + 1:]
                 module_name = fname
                 docfile_name = os.path.splitext(fname)[0]
                 docdir = os.path.join(args.docdir, module_dir)
