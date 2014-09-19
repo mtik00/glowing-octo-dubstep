@@ -56,7 +56,7 @@ copyright = COPYRIGHT
 
 # Read the version from our project
 THIS_DIR = os.path.realpath(os.path.dirname(__file__))
-LIB_DIR = os.path.realpath(os.path.join(THIS_DIR, '..', 'lib'))
+LIB_DIR = os.path.realpath(os.path.join(THIS_DIR, '..', 'src'))
 sys.path.insert(0, os.path.abspath(LIB_DIR))
 version_file = os.path.join(LIB_DIR, 'SAMPLEPROJ', '__init__.py')
 __version__ = None

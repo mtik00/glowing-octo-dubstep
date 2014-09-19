@@ -18,10 +18,10 @@ __version__ = "0.03"
 # Globals ######################################################################
 
 # Base directory to search for modules
-LIBDIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'lib', 'SAMPLEPROJ'))
+LIBDIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'src', 'SAMPLEPROJ'))
 
 # Base directory to put auto-generated doc files.
-DOCDIR = os.path.realpath(os.path.join(os.path.dirname(__file__), 'rst', 'lib'))
+DOCDIR = os.path.realpath(os.path.join(os.path.dirname(__file__), 'rst', 'src'))
 
 # The auto-generated index file (you'll need to add this to a TOC)
 INDEX_FILE = "rst/auto.rst"
@@ -79,7 +79,7 @@ if __name__ == '__main__':
                 docfile_name = os.path.split(root)[1]
                 docdir = os.path.join(args.docdir, module_dir, '..')
                 docfile = os.path.abspath(os.path.join(docdir, "%s.rst" % docfile_name))
-                index_entry = ('lib/%s' % module_dir).replace('\\', '/')
+                index_entry = ('src/%s' % module_dir).replace('\\', '/')
                 automodule = module_name
             elif (os.path.split(root)[1] != docdir_root) and ('__init__.py' in files):
                 # module_dir = root[len(args.libdir) + 1:]
@@ -87,7 +87,7 @@ if __name__ == '__main__':
                 docfile_name = os.path.splitext(fname)[0]
                 docdir = os.path.join(args.docdir, module_dir)
                 docfile = os.path.abspath(os.path.join(docdir, "%s.rst" % docfile_name))
-                index_entry = ('lib/%s/%s' % (module_dir, docfile_name)).replace('\\', '/')
+                index_entry = ('src/%s/%s' % (module_dir, docfile_name)).replace('\\', '/')
                 automodule = '.'.join([docdir[len(args.docdir) + 1:], docfile_name]).replace('\\', '.')
 
             if not docfile:

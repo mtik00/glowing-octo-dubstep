@@ -14,7 +14,7 @@ try:
     import pypandoc
 except ImportError:
     pypandoc = None
-    print("ERROR: Can't import pypandoc; lib/README.rst will have wrong format")
+    print("ERROR: Can't import pypandoc; src/README.rst will have wrong format")
 
 
 # Metadata #####################################################################
@@ -26,7 +26,7 @@ __version__ = "0.03"
 
 # Globals ######################################################################
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
-LIB_DIR = os.path.realpath(os.path.join(THIS_DIR, '..', 'lib'))
+LIB_DIR = os.path.realpath(os.path.join(THIS_DIR, '..', 'src'))
 
 
 def remove_directory(top, remove_top=True, filter=None):
@@ -68,10 +68,10 @@ def ex(command, cwd=None):
 
 
 def make_docs():
-    """Create the documentation and add it to ../lib/docs"""
+    """Create the documentation and add it to ../src/docs"""
     doc_build_dir = os.path.join(THIS_DIR, '..', 'docs')
     doc_html_build = os.path.join(doc_build_dir, '_build', 'html')
-    doc_dest_dir = os.path.join(THIS_DIR, '..', 'lib', 'docs')
+    doc_dest_dir = os.path.join(THIS_DIR, '..', 'src', 'docs')
 
     ex("make clean && make html", cwd=doc_build_dir)
 
@@ -90,7 +90,7 @@ def make_docs():
 
 def update_readme():
     markup_file = os.path.realpath(os.path.join(LIB_DIR, '..', 'README.md'))
-    rst_file = os.path.realpath(os.path.join(LIB_DIR, '..', 'lib', 'README.rst'))
+    rst_file = os.path.realpath(os.path.join(LIB_DIR, '..', 'src', 'README.rst'))
 
     if pypandoc:
         rst = pypandoc.convert(markup_file, 'rst')
