@@ -8,8 +8,8 @@ import sys
 
 # Options ######################################################################
 PROJECT = u"SAMPLEPROJ"
-USERNAME = u"Timothy McFadden"
-COPYRIGHT = u"2014, %s" % USERNAME
+USERNAME = u"FULLNAME"
+COPYRIGHT = u"CURRENTYEAR, %s" % USERNAME
 DOCTEST = True
 INCLUDE_SOURCE = False
 ################################################################################

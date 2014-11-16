@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Timothy McFadden"
+__author__ = "FULLNAME"
 __date__ = "99/99/9999"
-__copyright__ = "Timothy McFadden, 2014"
+__copyright__ = "FULLNAME, CURRENTYEAR"
 __license__ = "MIT"
 __version__ = "0.01"
 """
