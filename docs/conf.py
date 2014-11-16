@@ -7,7 +7,9 @@ import os
 import sys
 
 # Options ######################################################################
-PROJECT = u"SAMPLEPROJ"
+PROJECT = u"SAMPLEPROJ"  # E.g. "some-test"
+PROJECT_LIBDIR_NAME = u"SAMPLEPROJ"  # E.g. "some_test"
+PACKAGE_DIRNAME = "src"  # The root directory for the package
 USERNAME = u"FULLNAME"
 COPYRIGHT = u"CURRENTYEAR, %s" % USERNAME
 DOCTEST = True
@@ -56,9 +58,9 @@ copyright = COPYRIGHT
 
 # Read the version from our project
 THIS_DIR = os.path.realpath(os.path.dirname(__file__))
-LIB_DIR = os.path.realpath(os.path.join(THIS_DIR, '..', 'src'))
+LIB_DIR = os.path.realpath(os.path.join(THIS_DIR, '..', PACKAGE_DIRNAME))
 sys.path.insert(0, os.path.abspath(LIB_DIR))
-version_file = os.path.join(LIB_DIR, PROJECT, '__init__.py')
+version_file = os.path.join(LIB_DIR, PROJECT_LIBDIR_NAME, '__init__.py')
 __version__ = None
 with open(version_file, 'rb') as f:
     exec(f.read())
