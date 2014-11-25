@@ -4,7 +4,7 @@ This module creates and initializes a project-wide logger.
 
 Example::
 
-    >>> from SAMPLEPROJ.logger import get_logger()
+    >>> from SAMPLEPROJDIRNAME.logger import get_logger()
     >>> get_logger.debug("test")
     >>>
 """
@@ -16,7 +16,7 @@ import logging
 
 # Metadata #####################################################################
 __author__ = "FULLNAME"
-__date__ = "99/99/9999"
+__creationDate__ = "99/99/9999"
 __copyright__ = "FULLNAME, CURRENTYEAR"
 __license__ = "MIT"
 __version__ = "1.0.0dev"
@@ -26,7 +26,7 @@ __version__ = "1.0.0dev"
 LOGGER = None
 
 LOGFILE_DIR = "."
-LOGFILE_NAME = "SAMPLEPROJ-log.txt"
+LOGFILE_NAME = "SAMPLEPROJDIRNAME-log.txt"
 LOGFILE_FORMATTER = logging.Formatter('%(asctime)s - %(filename)s:%(lineno)d - %(levelname)s - %(message)s')
 LOGFILE_LEVEL = logging.DEBUG
 
@@ -38,7 +38,7 @@ def _init():
     global LOGGER
 
     if LOGGER is None:
-        LOGGER = logging.getLogger('SAMPLEPROJ')
+        LOGGER = logging.getLogger('SAMPLEPROJDIRNAME')
         LOGGER.setLevel(logging.DEBUG)
 
         ch = logging.StreamHandler()

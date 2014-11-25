@@ -6,7 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   src/SAMPLEPROJ/logger
-   src/SAMPLEPROJ
-   src/tests/test_SAMEPROJ
-   src/tests
+   src/SAMPLEPROJDIRNAME/logger
+   src/SAMPLEPROJDIRNAME
+   src/SAMPLEPROJDIRNAME/tests/test_SAMPLEPROJDIRNAME
+   src/SAMPLEPROJDIRNAME/tests

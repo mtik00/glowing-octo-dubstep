@@ -5,20 +5,20 @@ __copyright__ = "FULLNAME, CURRENTYEAR"
 __license__ = "MIT"
 __version__ = "0.01"
 """
-This is the unit test for SAMPEPROJ.
+This is the unit test for "SAMPEPROJNAME".
 """
 import os
 import sys
 import unittest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import SAMPLEPROJ
+import SAMPLEPROJDIRNAME
 
 
 class Test(unittest.TestCase):
 
     def test_f1(self):
-        SAMPLEPROJ.f1("testing")
+        SAMPLEPROJDIRNAME.f1("testing")
 
 
 if __name__ == '__main__':
