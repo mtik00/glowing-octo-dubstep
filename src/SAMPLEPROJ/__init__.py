@@ -15,10 +15,11 @@ from SAMPLEPROJ.logger import get_logger
 
 # Metadata #####################################################################
 __author__ = "FULLNAME"
-__date__ = "99/99/9999"
+__createDate__ = "99/99/9999"
 __copyright__ = "FULLNAME, CURRENTYEAR"
 __license__ = "MIT"
 __version__ = "1.0.0dev"
+VERSION = __version__  # For compatibility with other models
 
 
 # Globals ######################################################################
