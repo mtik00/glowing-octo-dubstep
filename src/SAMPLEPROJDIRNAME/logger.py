@@ -4,7 +4,7 @@ This module creates and initializes a project-wide logger.
 
 Example::
 
-    >>> from SAMPLEPROJDIRNAME.logger import get_logger()
+    >>> from SAMPLEPROJDIRNAME.logger import get_logger
     >>> get_logger.debug("test")
     >>>
 """
