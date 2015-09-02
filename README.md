@@ -12,8 +12,11 @@ Usage
 1.  Download/clone this repository
 2.  run "initialize.py" from the script directory
 3.  Answer all of the questions (you should have a Travis-CI account)
+4.  Change the base directory name from `glowing-octo-dubstep` to something more appropriate
+5.  Delete the `.git` folder
+6.  Add the directory tree to your SCM of choice
 
-When that is done, your project should be good to go.
+Once that is all done, your project should be good to go.
 
 The alternative is to use an editor to replace all occurrences of these strings:
 
