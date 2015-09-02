@@ -145,7 +145,7 @@ if __name__ == '__main__':
     shutil.move(source, dest)
 
     # remove left over dirs
-    for directory in ['cronner.egg-info', 'dist', 'build', 'cronner-%s' % __version__]:
+    for directory in ['SAMPLEPROJ.egg-info', 'dist', 'build', 'SAMPLEPROJ-%s' % __version__]:
         path = os.path.join(LIB_DIR, directory)
         if os.path.exists(path):
             remove_directory(path)
