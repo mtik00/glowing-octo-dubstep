@@ -1,3 +1,4 @@
 include docs/*
 include README.rst
-include SAMPLEPROJDIRNAME *
+recursive-include SAMPLEPROJDIRNAME *
+recursive-exclude SAMPLEPROJDIRNAME *.pyc
