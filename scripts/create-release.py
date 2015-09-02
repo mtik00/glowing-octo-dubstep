@@ -32,7 +32,7 @@ LIB_DIR = os.path.realpath(os.path.join(THIS_DIR, '..', 'src'))
 def package_version():
     """Return the current version of our package."""
     sys.path.insert(0, LIB_DIR)
-    from cronner import __version__
+    from SAMPLEPROJ import __version__
     return __version__
 
 

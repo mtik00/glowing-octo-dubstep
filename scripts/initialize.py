@@ -179,6 +179,7 @@ def auto_rst(user_data, filepath):
 
 def create_release(user_data, filepath):
     replace_list = [
+        ("SAMPLEPROJ", user_data["project_name"]),
         ("SAMPLEPROJDIRNAME", user_data["project_dir_name"]),
     ]
     replace_in_file(filepath, replace_list)
